@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSCRE | Monthly Cash Flow Through Tax-Advantaged Multifamily Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#00122D',
+                        'navy-light': '#0E141C',
+                        accent: '#3898EC',
+                        slate: '#535E6C',
+                        'light-bg': '#F7F9FC',
+                        'soft-gray': '#DCE2EB',
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .option-btn { transition: all 0.2s; }
+        .option-btn:hover { background-color: #3898EC; color: #fff; border-color: #3898EC; }
+        .option-btn.selected { background-color: #3898EC; color: #fff; border-color: #3898EC; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-content.open { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(0,18,45,0.92), rgba(0,18,45,0.85)); }
+    </style>
+</head>
+<body class="bg-white text-navy-light">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-sm z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-white text-2xl font-bold tracking-wider">LSCRE</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-white/80 hover:text-white text-sm">How It Works</a>
+                    <a href="#track-record" class="text-white/80 hover:text-white text-sm">Track Record</a>
+                    <a href="#testimonials" class="text-white/80 hover:text-white text-sm">Testimonials</a>
+                    <a href="#faq" class="text-white/80 hover:text-white text-sm">FAQ</a>
+                    <a href="#qualify" class="bg-accent hover:bg-accent/90 text-white px-5 py-2 rounded text-sm font-semibold transition">Invest With Us</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#how-it-works" class="block text-white/80 text-sm">How It Works</a>
+                <a href="#track-record" class="block text-white/80 text-sm">Track Record</a>
+                <a href="#testimonials" class="block text-white/80 text-sm">Testimonials</a>
+                <a href="#faq" class="block text-white/80 text-sm">FAQ</a>
+                <a href="#qualify" class="block bg-accent text-white px-4 py-2 rounded text-sm font-semibold text-center">Invest With Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="qualify" class="relative min-h-screen pt-16 bg-navy">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: url('images/676da37984c9ee63224f16d4_exterior_vizcaya.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-wider mb-4">For Accredited Investors Looking to Deploy $100K+</p>
+                    <h1 class="text-white text-4xl lg:text-5xl font-bold leading-tight mb-6">Monthly Cash Flow and Peace of Mind Through Tax-Advantaged Multifamily Investments</h1>
+                    <p class="text-white/80 text-lg mb-8 leading-relaxed">Earn 25.1% average annualized returns with zero capital calls, conservative leverage, and a 200+ person in-house team managing every property. Backed by $800M+ in acquisitions since 2018.</p>
+                    <!-- VSL Placeholder -->
+                    <div class="bg-navy-light/50 rounded-lg aspect-video flex items-center justify-center mb-6 border border-white/10">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <p class="text-white/60 text-sm">Watch the Full Investor Presentation</p>
+                        </div>
+                    </div>
+                    <p class="text-white/40 text-xs">*Returns represent weighted averages on realized investments. Past performance is not indicative of future results. All investments carry risk, including the potential loss of principal.</p>
+                </div>
+                <!-- Qualification Form -->
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <h3 class="text-navy text-xl font-bold mb-2">See If You Qualify</h3>
+                        <p class="text-slate text-sm">Answer a few quick questions to see if LSCRE is the right fit.</p>
+                    </div>
+                    <div id="progress-bar-1" class="flex items-center justify-center gap-2 mb-6">
+                        <span class="step-dot w-2.5 h-2.5 rounded-full bg-accent"></span>
+                        <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                        <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                        <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                        <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                    </div>
+                    <form id="form-1" onsubmit="return false;">
+                        <!-- Step 1 -->
+                        <div class="form-step active fade-in" data-step="1">
+                            <p class="text-navy font-semibold text-sm mb-1">Step 1 of 5</p>
+                            <h4 class="text-navy-light font-bold text-lg mb-4">Are you an accredited investor?</h4>
+                            <div class="space-y-3">
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 1)">Yes</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 1)">No</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 1)">I am not sure</button>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="form-step" data-step="2">
+                            <p class="text-navy font-semibold text-sm mb-1">Step 2 of 5</p>
+                            <h4 class="text-navy-light font-bold text-lg mb-4">How much are you looking to invest in the next 12 months?</h4>
+                            <div class="space-y-3">
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 1)">$100K - $250K</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 1)">$250K - $500K</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 1)">$500K - $1M</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 1)">$1M+</button>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="form-step" data-step="3">
+                            <p class="text-navy font-semibold text-sm mb-1">Step 3 of 5</p>
+                            <h4 class="text-navy-light font-bold text-lg mb-4">What is your primary investment goal?</h4>
+                            <div class="space-y-3">
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 1)">Monthly passive income</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 1)">Tax advantages and depreciation</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 1)">Long-term capital appreciation</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 1)">Diversify away from stocks</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 1)">All of the above</button>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="form-step" data-step="4">
+                            <p class="text-navy font-semibold text-sm mb-1">Step 4 of 5</p>
+                            <h4 class="text-navy-light font-bold text-lg mb-4">When are you looking to deploy capital?</h4>
+                            <div class="space-y-3">
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 1)">Immediately (next deal)</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 1)">Within 30 days</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 1)">Within 90 days</button>
+                                <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 1)">Just exploring options</button>
+                            </div>
+                        </div>
+                        <!-- Step 5: Contact Info -->
+                        <div class="form-step" data-step="5">
+                            <p class="text-navy font-semibold text-sm mb-1">Step 5 of 5</p>
+                            <h4 class="text-navy-light font-bold text-lg mb-4">Almost there. Enter your details.</h4>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <input type="text" placeholder="First Name" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent" required>
+                                    <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent" required>
+                                </div>
+                                <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent" required>
+                                <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent" required>
+                                <button type="button" onclick="window.location.href='/thankyou'" class="w-full bg-accent hover:bg-accent/90 text-white py-4 rounded-lg font-bold text-lg transition">Get My Investment Consultation</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="bg-white py-12 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+                <div><p class="text-3xl lg:text-4xl font-bold text-navy">$800M+</p><p class="text-slate text-sm mt-1">Acquisitions</p></div>
+                <div><p class="text-3xl lg:text-4xl font-bold text-navy">25.1%</p><p class="text-slate text-sm mt-1">Avg. Annualized Return*</p></div>
+                <div><p class="text-3xl lg:text-4xl font-bold text-navy">5,000+</p><p class="text-slate text-sm mt-1">Apartment Homes</p></div>
+                <div><p class="text-3xl lg:text-4xl font-bold text-navy">400+</p><p class="text-slate text-sm mt-1">Repeat Investors</p></div>
+                <div class="col-span-2 md:col-span-1"><p class="text-3xl lg:text-4xl font-bold text-accent">Zero</p><p class="text-slate text-sm mt-1">Capital Calls</p></div>
+            </div>
+            <p class="text-center text-xs text-slate/60 mt-6">*Weighted average on realized investments. Past performance is not indicative of future results.</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="bg-light-bg py-20 lg:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-8 text-center">You Have the Capital. You Do Not Have an Operator You Trust.</h2>
+            <div class="space-y-6 text-slate text-lg leading-relaxed">
+                <p>You are an accredited investor. You have built real wealth through your career, your business, or your investments. And you know your money should be working harder than a 5% money market account.</p>
+                <p>But every option has a problem. The stock market swings 10% in a month and you lose sleep over it. Owning rental properties means dealing with tenants, maintenance, and management headaches you did not sign up for.</p>
+                <p>And the syndication space is full of sponsors making identical promises, with no way to tell who will actually deliver and who will blow up when the market turns.</p>
+                <p>You may have already been burned. A sponsor who over-leveraged with floating-rate debt. A crowdfunding platform where deals went sideways. A capital call that wiped out months of returns.</p>
+                <p class="font-semibold text-navy-light">So now you are sitting on cash. Not because you do not want to invest. But because you cannot find an operator you trust enough to write a six-figure check to.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="bg-white py-20 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-4 text-center">Invest With the Operator. Not Through a Middleman.</h2>
+            <p class="text-slate text-lg text-center max-w-3xl mx-auto mb-12">LSCRE is a vertically integrated multifamily investment firm that acquires, manages, and operates every property in-house. No outsourced management. No middlemen.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">Monthly Cash Flow</h3>
+                    <p class="text-slate text-sm">Distributions from day one, backed by an 8% compounding preferred return. Paid monthly.</p>
+                </div>
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">Tax Advantages</h3>
+                    <p class="text-slate text-sm">Cost segregation and depreciation benefits that can offset your W-2 or business income. Plus 1031 exchange facilitation.</p>
+                </div>
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">Conservative Structure</h3>
+                    <p class="text-slate text-sm">65% max LTV. Fixed-rate debt. Interest-only payments. Your investment is protected by structure, not luck.</p>
+                </div>
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">Vertical Integration</h3>
+                    <p class="text-slate text-sm">200+ person in-house team. Property management, construction, accounting, and asset management. All under one roof.</p>
+                </div>
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">1031 Exchanges</h3>
+                    <p class="text-slate text-sm">Roll gains tax-free from one investment to the next. Our specialist literally wrote the book on syndicated 1031 exchanges.</p>
+                </div>
+                <div class="bg-light-bg rounded-xl p-6">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-2">Full Transparency</h3>
+                    <p class="text-slate text-sm">Monthly reporting, detailed annual letters, and direct access to the leadership team. No surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="bg-navy py-20 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/656f8b01fa088fa237a0c893_R5C_5338_copy-p-1080.jpg" alt="Rob Beardsley, Founder and CEO of LSCRE" class="rounded-xl w-full max-w-md mx-auto shadow-2xl">
+                </div>
+                <div>
+                    <p class="text-accent text-sm font-semibold uppercase tracking-wider mb-3">Meet the Founder</p>
+                    <h2 class="text-white text-3xl lg:text-4xl font-bold mb-6">Built by Rob Beardsley</h2>
+                    <p class="text-white/80 text-lg leading-relaxed mb-6">Rob founded LSCRE in 2018 at age 20, closing his first acquisition, a 261-unit community in Houston, with a $4.5 million capital raise. Eight years later, LSCRE has acquired over $800 million in multifamily real estate, grown to 200+ employees, and delivered 25.1% average annualized returns with zero capital calls.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <p class="text-accent text-2xl font-bold">$800M+</p>
+                            <p class="text-white/60 text-sm">Acquisitions</p>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <p class="text-accent text-2xl font-bold">30,000+</p>
+                            <p class="text-white/60 text-sm">Books Sold</p>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <p class="text-accent text-2xl font-bold">3</p>
+                            <p class="text-white/60 text-sm">Podcast Series</p>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <p class="text-accent text-2xl font-bold">Zero</p>
+                            <p class="text-white/60 text-sm">Capital Calls</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm">Author of two bestselling books on multifamily underwriting. Carnegie Mellon University (High Honors). National conference speaker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Process Section -->
+    <section id="how-it-works" class="bg-light-bg py-20 lg:py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-4 text-center">How Your Investment Works</h2>
+            <p class="text-slate text-lg text-center max-w-2xl mx-auto mb-12">Four pillars. One vertically integrated platform. Complete investor alignment.</p>
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl p-6 lg:p-8 flex gap-6 items-start shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-lg">1</span></div>
+                    <div>
+                        <h3 class="text-navy font-bold text-xl mb-2">We Source and Underwrite</h3>
+                        <p class="text-slate">We identify high-growth Texas multifamily communities using deep broker relationships and our proprietary underwriting model. Every deal must pass a minimum 1.50x Loaded Interest Coverage Ratio before we will acquire.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 lg:p-8 flex gap-6 items-start shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-lg">2</span></div>
+                    <div>
+                        <h3 class="text-navy font-bold text-xl mb-2">We Acquire With Conservative Structure</h3>
+                        <p class="text-slate">Fixed-rate, interest-only debt at a maximum 65% loan-to-value. Over $600M in financing from Fannie Mae, Freddie Mac, and select private lenders.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 lg:p-8 flex gap-6 items-start shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-lg">3</span></div>
+                    <div>
+                        <h3 class="text-navy font-bold text-xl mb-2">We Operate In-House</h3>
+                        <p class="text-slate">Our 200+ person team at Radiance Living manages every property. Leasing, maintenance, construction, accounting. No outsourced management. Full control, full accountability.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 lg:p-8 flex gap-6 items-start shadow-sm">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-lg">4</span></div>
+                    <div>
+                        <h3 class="text-navy font-bold text-xl mb-2">You Earn</h3>
+                        <p class="text-slate">Monthly cash flow distributions backed by an 8% compounding preferred return. Tax deductions through depreciation and cost segregation. Capital appreciation. And when we sell or refinance, you share in the upside.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies / Track Record -->
+    <section id="track-record" class="bg-white py-20 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-4 text-center">Real Deals. Real Results.</h2>
+            <p class="text-slate text-lg text-center max-w-2xl mx-auto mb-12">Verified transactions with auditable numbers. Not projections.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-light-bg rounded-xl overflow-hidden">
+                    <img src="images/67f27358188cdbca27180b10_Unknown-p-500.jpeg" alt="Preserve at Copperleaf" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-navy font-bold text-lg mb-2">Preserve at Copperleaf</h3>
+                        <p class="text-accent text-2xl font-bold mb-3">45% Capital Returned in 13 Months</p>
+                        <ul class="text-slate text-sm space-y-1">
+                            <li>Acquired May 2024 for $34.25M</li>
+                            <li>Refinanced July 2025 at $53M valuation</li>
+                            <li>8% monthly distributions ongoing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-light-bg rounded-xl overflow-hidden">
+                    <img src="images/6418dfdf2b58e2766e8d6c8c_Canbrook.jpeg" alt="Cranbrook Forest" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-navy font-bold text-lg mb-2">Cranbrook Forest</h3>
+                        <p class="text-accent text-2xl font-bold mb-3">23.6% Gross IRR</p>
+                        <ul class="text-slate text-sm space-y-1">
+                            <li>261 units, acquired for $15.4M</li>
+                            <li>Sold for $22.1M (3.5 year hold)</li>
+                            <li>17.0% net IRR to investors</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-light-bg rounded-xl overflow-hidden">
+                    <img src="images/692db054f6ed4a6d8dea8f66_WW_Exterior_2_(1)_2_(1).jpg" alt="Whispering Winds" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-navy font-bold text-lg mb-2">Whispering Winds</h3>
+                        <p class="text-accent text-2xl font-bold mb-3">6.3% to 7.4% Cap Rate</p>
+                        <ul class="text-slate text-sm space-y-1">
+                            <li>Innovative affordable housing partnership</li>
+                            <li>50% property tax exemption</li>
+                            <li>Vertical integration made it possible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate/60 mt-8">*Past performance is not indicative of future results. Individual deal results vary and may not be representative of all investor experiences.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-light-bg py-20 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-12 text-center">What Our Investors Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="images/64776f52b06a3a758571e72f_1564590001858.jpg" alt="Alan Steinberg" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <p class="text-navy font-bold">Alan Steinberg</p>
+                            <p class="text-slate text-sm">Park Row Equity Partners</p>
+                        </div>
+                    </div>
+                    <p class="text-navy-light italic">"LSCRE's team is one of the most impressive and diligent groups in the multifamily investment space. Their track record of performance and communication with investors sets a high standard."</p>
+                    <p class="text-slate/60 text-xs mt-3">Disclosure: Mr. Steinberg is an LSCRE investor. He was not compensated for this testimonial. Individual results may vary.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="images/65f1099f4acea2e3f05a9926_1556340549819.jpeg" alt="Chris Larsen" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <p class="text-navy font-bold">Chris Larsen</p>
+                            <p class="text-slate text-sm">Investor</p>
+                        </div>
+                    </div>
+                    <p class="text-navy-light italic">"The transparency and professionalism from Rob and his team give me confidence that my capital is in good hands. Monthly distributions have been consistent and the reporting is best in class."</p>
+                    <p class="text-slate/60 text-xs mt-3">Disclosure: Mr. Larsen is an LSCRE investor. He was not compensated for this testimonial. Individual results may vary.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="images/65f0afe901c21c242d49b92a_Screenshot_2024-03-12_at_3.41.15_PM-p-500.png" alt="JC Clemens" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <p class="text-navy font-bold">JC Clemens</p>
+                            <p class="text-slate text-sm">Flagship Capital Partners</p>
+                        </div>
+                    </div>
+                    <p class="text-navy-light italic">"As an institutional partner, we conducted extensive due diligence on LSCRE. Their vertically integrated platform, conservative leverage, and operational capabilities exceeded our expectations."</p>
+                    <p class="text-slate/60 text-xs mt-3">Disclosure: Mr. Clemens represents an LSCRE institutional partner. He was not compensated for this testimonial. Individual results may vary.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="images/67536f845f2527a0d547faf4_Barrett.jpg" alt="Barrett Oakley" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <p class="text-navy font-bold">Barrett Oakley</p>
+                            <p class="text-slate text-sm">Oakley Capital</p>
+                        </div>
+                    </div>
+                    <p class="text-navy-light italic">"Having worked with multiple syndicators, LSCRE stands out for their conservative approach, their in-house management capabilities, and the quality of their investor communications."</p>
+                    <p class="text-slate/60 text-xs mt-3">Disclosure: Mr. Oakley is an LSCRE investor. He was not compensated for this testimonial. Individual results may vary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-navy py-20 lg:py-24 relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('images/63e00fb5f46ebfe14aa0df99_Team-p-1600.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-white text-3xl lg:text-4xl font-bold mb-4 text-center">Ready to Put Your Capital to Work?</h2>
+            <p class="text-white/70 text-lg text-center mb-10">Fill out the qualification form below. Our investor relations team will be in touch within 24 hours.</p>
+            <!-- Second Form Instance -->
+            <div class="bg-white rounded-xl p-6 lg:p-8 shadow-2xl max-w-lg mx-auto">
+                <div class="text-center mb-6">
+                    <h3 class="text-navy text-xl font-bold mb-2">See If You Qualify</h3>
+                </div>
+                <div id="progress-bar-2" class="flex items-center justify-center gap-2 mb-6">
+                    <span class="step-dot w-2.5 h-2.5 rounded-full bg-accent"></span>
+                    <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                    <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                    <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                    <span class="step-dot w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                </div>
+                <form id="form-2" onsubmit="return false;">
+                    <div class="form-step active fade-in" data-step="1">
+                        <p class="text-navy font-semibold text-sm mb-1">Step 1 of 5</p>
+                        <h4 class="text-navy-light font-bold text-lg mb-4">Are you an accredited investor?</h4>
+                        <div class="space-y-3">
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 2)">Yes</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 2)">No</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 1, 2)">I am not sure</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="2">
+                        <p class="text-navy font-semibold text-sm mb-1">Step 2 of 5</p>
+                        <h4 class="text-navy-light font-bold text-lg mb-4">How much are you looking to invest?</h4>
+                        <div class="space-y-3">
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 2)">$100K - $250K</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 2)">$250K - $500K</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 2)">$500K - $1M</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 2, 2)">$1M+</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="3">
+                        <p class="text-navy font-semibold text-sm mb-1">Step 3 of 5</p>
+                        <h4 class="text-navy-light font-bold text-lg mb-4">What is your primary investment goal?</h4>
+                        <div class="space-y-3">
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 2)">Monthly passive income</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 2)">Tax advantages and depreciation</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 2)">Long-term capital appreciation</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 2)">Diversify away from stocks</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 3, 2)">All of the above</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="4">
+                        <p class="text-navy font-semibold text-sm mb-1">Step 4 of 5</p>
+                        <h4 class="text-navy-light font-bold text-lg mb-4">When are you looking to deploy capital?</h4>
+                        <div class="space-y-3">
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 2)">Immediately (next deal)</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 2)">Within 30 days</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 2)">Within 90 days</button>
+                            <button type="button" class="option-btn w-full text-left px-4 py-3 border-2 border-gray-200 rounded-lg text-navy-light font-medium" onclick="selectOption(this, 4, 2)">Just exploring options</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="5">
+                        <p class="text-navy font-semibold text-sm mb-1">Step 5 of 5</p>
+                        <h4 class="text-navy-light font-bold text-lg mb-4">Almost there. Enter your details.</h4>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="text" placeholder="First Name" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent">
+                                <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent">
+                            </div>
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent">
+                            <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-navy-light focus:outline-none focus:border-accent">
+                            <button type="button" onclick="window.location.href='/thankyou'" class="w-full bg-accent hover:bg-accent/90 text-white py-4 rounded-lg font-bold text-lg transition">Get My Investment Consultation</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <p class="text-white/30 text-xs text-center mt-6">This is not an offer to sell or a solicitation of an offer to buy any securities. Offers can only be made through official offering documents to qualified investors.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-white py-20 lg:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">What is the minimum investment?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">$100,000 for Class A. $500,000 for Class B, which includes an enhanced 9% preferred return and reduced promote structure.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">How often are distributions paid?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">Monthly. All investors receive monthly cash flow distributions backed by an 8% compounding preferred return.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">What are the target returns?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">Our historical average annualized return across realized investments is 25.1%. On fully sold assets, the average is 32% annual returns. All investments carry risk, and past performance is not indicative of future results.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">Have you ever made a capital call?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">No. In over eight years of operations and $800M+ in acquisitions, we have never made a capital call or had an investor lose capital.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">How do the tax benefits work?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">When you invest in our properties, you receive depreciation and cost segregation benefits that flow through to your K-1. These deductions can offset significant taxable income. We also facilitate 1031 exchanges. Consult your tax advisor for specifics.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">What does "vertically integrated" mean?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">It means we manage everything in-house. Property management (Radiance Living), construction, accounting, asset management. Over 200 employees. We do not outsource to third parties.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center p-5 text-left" onclick="toggleFaq(this)">
+                        <span class="text-navy font-semibold pr-4">Can I do a 1031 exchange into an LSCRE investment?</span>
+                        <span class="faq-icon text-accent text-2xl flex-shrink-0">+</span>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-slate">Yes. We actively facilitate syndicated 1031 exchanges. Our Director of Investor Relations, Dasha Beardsley, specializes in this area and authored a book on the topic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <p class="text-white text-2xl font-bold tracking-wider mb-4">LSCRE</p>
+                    <p class="text-white/60 text-sm leading-relaxed">Vertically integrated multifamily investment firm. $800M+ in acquisitions. 25.1% average annualized returns.* Zero capital calls since 2018.</p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-3">Contact</p>
+                    <p class="text-white/60 text-sm">Email: ir@lscre.com</p>
+                    <p class="text-white/60 text-sm">Phone: (917) 765-3160</p>
+                    <p class="text-white/60 text-sm mt-2">One World Trade Center, Suite 47A<br>New York, NY 10007</p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-3">Resources</p>
+                    <a href="https://lscre.com/portfolio" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Portfolio</a>
+                    <a href="https://lscre.com/blog" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Annual Letters</a>
+                    <a href="https://lscre.com/content/passive-investor-guide" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Passive Investor Guide</a>
+                    <a href="https://www.linkedin.com/in/rob-beardsley/" target="_blank" class="block text-white/60 text-sm hover:text-white">LinkedIn</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-white/30 text-xs leading-relaxed">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Securities offerings are made only to accredited investors through official offering documents, including a Private Placement Memorandum (PPM). All investments in real estate carry inherent risk, including the potential loss of principal. Past performance is not indicative of future results. *Returns shown are weighted averages on realized investments and are not guaranteed. LSCRE makes investments available only to accredited investors as defined by SEC Rule 501 of Regulation D.</p>
+                <p class="text-white/20 text-xs mt-4">Copyright 2026 LSCRE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Form step navigation
+        function selectOption(btn, currentStep, formNum) {
+            const form = document.getElementById('form-' + formNum);
+            const buttons = btn.parentElement.querySelectorAll('.option-btn');
+            buttons.forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+
+            setTimeout(function() {
+                goToStep(currentStep + 1, formNum);
+            }, 300);
+        }
+
+        function goToStep(step, formNum) {
+            const form = document.getElementById('form-' + formNum);
+            const steps = form.querySelectorAll('.form-step');
+            const progressBar = document.getElementById('progress-bar-' + formNum);
+            const dots = progressBar.querySelectorAll('.step-dot');
+
+            steps.forEach(s => s.classList.remove('active'));
+            const targetStep = form.querySelector('.form-step[data-step="' + step + '"]');
+            if (targetStep) {
+                targetStep.classList.add('active');
+                targetStep.classList.add('fade-in');
+            }
+
+            dots.forEach((dot, i) => {
+                if (i < step) {
+                    dot.classList.remove('bg-gray-200');
+                    dot.classList.add('bg-accent');
+                } else {
+                    dot.classList.remove('bg-accent');
+                    dot.classList.add('bg-gray-200');
+                }
+            });
+        }
+
+        // FAQ accordion
+        function toggleFaq(trigger) {
+            const item = trigger.parentElement;
+            const content = item.querySelector('.faq-content');
+            const isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(function(faqItem) {
+                faqItem.classList.remove('open');
+                faqItem.querySelector('.faq-content').classList.remove('open');
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                content.classList.add('open');
+            }
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

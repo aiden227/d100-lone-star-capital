@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSCRE | Application Received</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#00122D',
+                        'navy-light': '#0E141C',
+                        accent: '#3898EC',
+                        slate: '#535E6C',
+                        'light-bg': '#F7F9FC',
+                        'soft-gray': '#DCE2EB',
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; }
+        .fade-in { animation: fadeIn 0.4s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(0,18,45,0.94), rgba(0,18,45,0.88)); }
+        .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,18,45,0.1); }
+        .video-card { transition: transform 0.2s, box-shadow 0.2s; }
+    </style>
+</head>
+<body class="bg-white text-navy-light">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-sm z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-white text-2xl font-bold tracking-wider">LSCRE</a>
+                    <span class="hidden sm:inline-block bg-accent/20 text-accent text-xs font-semibold px-3 py-1 rounded-full">Application Received</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#what-happens-next" class="text-white/80 hover:text-white text-sm">What Happens Next</a>
+                    <a href="#prepare" class="text-white/80 hover:text-white text-sm">Prepare for Your Call</a>
+                    <a href="#videos" class="text-white/80 hover:text-white text-sm">Videos</a>
+                    <a href="mailto:ir@lscre.com" class="bg-accent hover:bg-accent/90 text-white px-5 py-2 rounded text-sm font-semibold transition">Contact IR Team</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#what-happens-next" class="block text-white/80 text-sm">What Happens Next</a>
+                <a href="#prepare" class="block text-white/80 text-sm">Prepare for Your Call</a>
+                <a href="#videos" class="block text-white/80 text-sm">Videos</a>
+                <a href="mailto:ir@lscre.com" class="block bg-accent text-white px-4 py-2 rounded text-sm font-semibold text-center">Contact IR Team</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Confirmation Hero Section -->
+    <section class="relative pt-16 bg-navy">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 opacity-15" style="background-image: url('images/65c6a8ccb2e19559e246ec19_ASPIRE_2-p-500.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="text-center mb-10 fade-in">
+                <!-- Confirmation checkmark -->
+                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h1 class="text-white text-3xl lg:text-5xl font-bold leading-tight mb-4">You Are In. Watch This Before Your Call.</h1>
+                <p class="text-white/70 text-lg max-w-2xl mx-auto">Your investment consultation request has been received. A member of our investor relations team will reach out within 24 hours to schedule your call.</p>
+            </div>
+
+            <!-- Thank You Video Placeholder -->
+            <div class="bg-navy-light/50 rounded-xl aspect-video flex items-center justify-center mb-10 border border-white/10 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p class="text-white/60 text-sm">A Personal Message from Rob Beardsley, Founder and CEO</p>
+                </div>
+            </div>
+
+            <!-- What Happens Next Timeline -->
+            <div id="what-happens-next" class="max-w-2xl mx-auto">
+                <h2 class="text-white text-xl font-bold mb-6 text-center">What Happens Next</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">Within 24 hours</p>
+                            <p class="text-white/60 text-sm">Our IR team will reach out to schedule your 30-minute investment consultation</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">Before the call</p>
+                            <p class="text-white/60 text-sm">You will receive our investor materials package with current deal details and projected returns</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">On the call</p>
+                            <p class="text-white/60 text-sm">We will review your goals, walk through current opportunities, and answer every question you have</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primary CTA -->
+    <section class="bg-white py-10 border-b border-gray-100">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+            <a href="mailto:ir@lscre.com?subject=Preparing%20for%20My%20Investment%20Consultation" class="inline-block bg-accent hover:bg-accent/90 text-white px-10 py-4 rounded-lg font-bold text-lg transition shadow-lg shadow-accent/20 w-full sm:w-auto">Prepare for Your Call (5 minutes)</a>
+            <p class="text-slate text-sm mt-4">Not the right time? <a href="mailto:ir@lscre.com?subject=Reschedule%20My%20Consultation" class="text-accent hover:underline">Reschedule here.</a></p>
+        </div>
+    </section>
+
+    <!-- How to Prepare Section -->
+    <section id="prepare" class="bg-light-bg py-20 lg:py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-4 text-center">Get the Most From Your Investment Consultation</h2>
+            <p class="text-slate text-lg text-center max-w-2xl mx-auto mb-12">Come prepared and we will skip the basics. Here are the three things to do before your call.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-lg">1</span>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-3">Review the Investor Materials</h3>
+                    <p class="text-slate text-sm leading-relaxed">We will send you our current deal summary, projected returns, and most recent annual letter. Read through them before we connect so we can skip the basics and focus on your specific questions.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-lg">2</span>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-3">Know Your Investment Goals</h3>
+                    <p class="text-slate text-sm leading-relaxed">Are you primarily looking for monthly passive income, tax advantages, long-term appreciation, or all three? Having clarity on this helps us match you with the right opportunity and structure.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-lg">3</span>
+                    </div>
+                    <h3 class="text-navy font-bold text-lg mb-3">Bring All Decision-Makers</h3>
+                    <p class="text-slate text-sm leading-relaxed">If you invest jointly with a spouse or partner, have them on the call. We want all decision-makers present so we can cover everything in one meeting and discuss next steps together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breakout Videos Section -->
+    <section id="videos" class="bg-white py-20 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-navy text-3xl lg:text-4xl font-bold mb-4 text-center">Watch These Before Your Call</h2>
+            <p class="text-slate text-lg text-center max-w-2xl mx-auto mb-12">These six short videos cover everything you need to know. Watch them in order for the best preparation.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video Card 1 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded">Next Steps</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">What Happens After You Apply</h3>
+                        <p class="text-slate text-sm">Exactly what to expect between now and your investment consultation, including who you will speak with and how to prepare.</p>
+                    </div>
+                </div>
+                <!-- Video Card 2 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-navy text-white text-xs font-semibold px-2.5 py-1 rounded">Qualification</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">Is LSCRE Right For You?</h3>
+                        <p class="text-slate text-sm">Who we work with, who we do not, and the specific criteria that make you a good fit for our platform.</p>
+                    </div>
+                </div>
+                <!-- Video Card 3 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded">Our Process</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">How Our Investors Earn 25%+ Returns</h3>
+                        <p class="text-slate text-sm">The three-stage mechanism behind our vertically integrated platform, from sourcing to monthly distributions.</p>
+                    </div>
+                </div>
+                <!-- Video Card 4 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-navy text-white text-xs font-semibold px-2.5 py-1 rounded">Objection Answered</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">Zero Capital Calls. Here Is Why.</h3>
+                        <p class="text-slate text-sm">How our conservative capital structure with 65% max LTV and fixed-rate debt has protected investors through every market cycle.</p>
+                    </div>
+                </div>
+                <!-- Video Card 5 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-navy text-white text-xs font-semibold px-2.5 py-1 rounded">Objection Answered</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">8 Years, $800M+, Zero Losses</h3>
+                        <p class="text-slate text-sm">Addressing concerns about our firm's age and leadership team with data, institutional partnerships, and track record.</p>
+                    </div>
+                </div>
+                <!-- Video Card 6 -->
+                <div class="video-card bg-light-bg rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-navy/5 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded">Call Prep</span>
+                        </div>
+                        <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-navy font-bold mb-2">3 Things to Bring to Your Call</h3>
+                        <p class="text-slate text-sm">Exactly what to prepare, who should attend, and how to make the most of your 30-minute consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is and Is Not For Section -->
+    <section class="bg-light-bg py-20 lg:py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- This call IS for you -->
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm border-t-4 border-green-500">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h3 class="text-navy font-bold text-lg">This call is for you if:</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate text-sm">You are an accredited investor (net worth $1M+ or income $200K+)</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate text-sm">You have $100,000 or more to deploy in the next 12 months</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate text-sm">You are looking for monthly passive income, tax advantages, or portfolio diversification</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate text-sm">You want to invest directly with the operator, not through a platform or middleman</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate text-sm">You are comfortable with a multi-year hold period and illiquid investment</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- This call is NOT for you -->
+                <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm border-t-4 border-red-400">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-red-400/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </div>
+                        <h3 class="text-navy font-bold text-lg">This call is not for you if:</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-slate text-sm">You are not an accredited investor</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-slate text-sm">You are looking to invest less than $100,000</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-slate text-sm">You need immediate liquidity or a short-term investment</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-slate text-sm">You are looking for guaranteed returns (no real estate investment is risk-free)</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-slate text-sm">You are not prepared to make a decision within a reasonable timeframe</span>
+                        </li>
+                    </ul>
+                    <p class="text-slate/60 text-xs mt-6">If any of the above apply, please reschedule. We would rather save both of our time. <a href="mailto:ir@lscre.com?subject=Reschedule%20My%20Consultation" class="text-accent hover:underline">Reschedule here.</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-navy py-20 lg:py-24 relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('images/63e00fb5f46ebfe14aa0df99_Team-p-1600.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-white text-3xl lg:text-4xl font-bold mb-4">Your Next Step</h2>
+            <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Review the videos above, check your email for investor materials, and come to your call prepared with questions. We are looking forward to speaking with you.</p>
+            <div class="space-y-4">
+                <a href="mailto:ir@lscre.com?subject=Preparing%20for%20My%20Investment%20Consultation" class="inline-block bg-accent hover:bg-accent/90 text-white px-10 py-4 rounded-lg font-bold text-lg transition shadow-lg shadow-accent/20 w-full sm:w-auto">Prepare for Your Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <p class="text-white text-2xl font-bold tracking-wider mb-4">LSCRE</p>
+                    <p class="text-white/60 text-sm leading-relaxed">Vertically integrated multifamily investment firm. $800M+ in acquisitions. 25.1% average annualized returns.* Zero capital calls since 2018.</p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-3">Contact</p>
+                    <p class="text-white/60 text-sm">Email: ir@lscre.com</p>
+                    <p class="text-white/60 text-sm">Phone: (917) 765-3160</p>
+                    <p class="text-white/60 text-sm mt-2">One World Trade Center, Suite 47A<br>New York, NY 10007</p>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-3">Resources</p>
+                    <a href="https://lscre.com/portfolio" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Portfolio</a>
+                    <a href="https://lscre.com/blog" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Annual Letters</a>
+                    <a href="https://lscre.com/content/passive-investor-guide" target="_blank" class="block text-white/60 text-sm hover:text-white mb-1">Passive Investor Guide</a>
+                    <a href="https://www.linkedin.com/in/rob-beardsley/" target="_blank" class="block text-white/60 text-sm hover:text-white">LinkedIn</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-white/30 text-xs leading-relaxed">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Securities offerings are made only to accredited investors through official offering documents, including a Private Placement Memorandum (PPM). All investments in real estate carry inherent risk, including the potential loss of principal. Past performance is not indicative of future results. *Returns shown are weighted averages on realized investments and are not guaranteed. LSCRE makes investments available only to accredited investors as defined by SEC Rule 501 of Regulation D.</p>
+                <p class="text-white/20 text-xs mt-4">Copyright 2026 LSCRE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
